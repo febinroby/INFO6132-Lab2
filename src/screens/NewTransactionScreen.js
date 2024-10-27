@@ -19,8 +19,10 @@ const NewTransactionScreen = () => {
       amount: parseFloat(amount),
       date: new Date().toISOString().split('T')[0],
     };
-    
+
     addTransaction(newTransaction);
+
+    Alert.alert('Success', 'Transaction added successfully.');
   };
 
   return (
