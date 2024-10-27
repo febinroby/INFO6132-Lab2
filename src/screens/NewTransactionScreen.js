@@ -8,12 +8,18 @@ const NewTransactionScreen = () => {
   const { addTransaction } = useContext(TransactionsContext);
 
   const handleAddTransaction = () => {
+    if (!name.trim() || !amount.trim()) {
+      Alert.alert('Error', 'Please fill in both the transaction name and amount.');
+      return;
+    }
+
     const newTransaction = {
       id: Date.now().toString(),
       name,
       amount: parseFloat(amount),
       date: new Date().toISOString().split('T')[0],
     };
+    
     addTransaction(newTransaction);
   };
 
