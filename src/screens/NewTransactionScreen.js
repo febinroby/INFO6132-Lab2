@@ -23,6 +23,9 @@ const NewTransactionScreen = () => {
     addTransaction(newTransaction);
 
     Alert.alert('Success', 'Transaction added successfully.');
+
+    setName('');
+    setAmount('');
   };
 
   return (
